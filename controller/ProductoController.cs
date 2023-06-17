@@ -1,9 +1,4 @@
 ﻿using HelloWorld.dao;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HelloWorld.controller
 {
@@ -11,6 +6,7 @@ namespace HelloWorld.controller
     {
 
         private ProductoDAO productoDAO = new();
+  
         public void agregarProducto()
         {
             Console.WriteLine("\n==== Crear Producto ====\n");
@@ -25,6 +21,11 @@ namespace HelloWorld.controller
             double precioProducto = double.Parse(Console.ReadLine());
 
             productoDAO.crearProducto(nomProducto, descProducto, precioProducto);
+        }
+
+        public void listarProductos()
+        {
+            productoDAO.listarProductos();
         }
     }
 }

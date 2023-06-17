@@ -1,9 +1,4 @@
 ﻿using HelloWorld.model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HelloWorld.dao
 {
@@ -17,6 +12,30 @@ namespace HelloWorld.dao
                 int idNuevoProducto = productos.Count + 1;
 
                 producto = new Producto(idNuevoProducto, nomProducto, descProducto, precioProducto);
+
+                productos.Add(producto);
+
+                Console.WriteLine("\nSe añadio el producto correctamente!\n");
+            }
+        }
+
+        public void listarProductos()
+        {
+            Console.WriteLine("\n==== Lista de Productos ====\n");
+
+            if(productos.Count > 0)
+            {
+                foreach(Producto producto in productos)
+                {
+                    Console.WriteLine($"Id : {producto.idProducto}");
+                    Console.WriteLine($"Nombre : {producto.nombreProducto}");
+                    Console.WriteLine($"Descripcion : {producto.descripcionProducto}");
+                    Console.WriteLine($"Precio : {producto.precioProducto}\n");
+                }
+            }
+            else
+            {
+                Console.WriteLine("No hay productos en la lista!");
             }
         }
     }

@@ -4,7 +4,7 @@ namespace HelloWorld.dao
 {
     public class ProductoDAO
     {
-        static List<Producto> productos = new List<Producto>();
+        public static List<Producto> productos = new List<Producto>();
         Producto producto;
         public void crearProducto(string nomProducto, string descProducto, double precioProducto)
         {
@@ -35,8 +35,9 @@ namespace HelloWorld.dao
             }
             else
             {
-                Console.WriteLine("No hay productos en la lista!");
+                Console.WriteLine("*** No hay productos en la lista! ***");
             }
         }
+
     }
 }

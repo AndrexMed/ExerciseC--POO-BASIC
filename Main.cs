@@ -3,6 +3,7 @@ using HelloWorld.controller;
 
 ClienteController clienteController = new();
 ProductoController productoController = new();
+PedidoController pedidoController = new();
 
 bool flag = true;
 
@@ -14,6 +15,7 @@ while (flag)
     Console.WriteLine("2. Crear producto");
     Console.WriteLine("22. Listar productos");
     Console.WriteLine("3. Crear pedido");
+    Console.WriteLine("33. Listar pedidos");
     Console.WriteLine("4. Actualizar cliente");
     Console.WriteLine("5. Actualizar producto");
     Console.WriteLine("6. Eliminar cliente");
@@ -39,17 +41,20 @@ while (flag)
         case 22:
             productoController.listarProductos();
             break;
-            case 3:
-
+        case 3:
+            pedidoController.crearPedido();
+            break;
+        case 33:
+            pedidoController.listarPedidos();
             break;
         case 4:
-
+            clienteController.actualizarCliente();
             break;
         case 5:
 
             break;
         case 6:
-
+            clienteController.eliminarCliente();
             break;
         case 7:
 

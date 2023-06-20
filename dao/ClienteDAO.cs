@@ -5,7 +5,7 @@ namespace HelloWorld.dao
     public class ClienteDAO
     {
 
-        static List<Cliente> clientes = new List<Cliente>();
+        public static List<Cliente> clientes = new List<Cliente>();
         private Cliente cliente;
         //static List<Pedido> pedidos = new List<Pedido>();
 
@@ -18,7 +18,7 @@ namespace HelloWorld.dao
 
             clientes.Add(cliente);
 
-            Console.WriteLine("\nCliente creado exitosamente!");
+            Console.WriteLine("\n*** Cliente creado exitosamente! ***");
         }
 
         public void listarClientes()
@@ -36,18 +36,67 @@ namespace HelloWorld.dao
             }
             else
             {
-                Console.WriteLine("No hay clientes registrados.");
+                Console.WriteLine("\n*** No hay clientes registrados. ***\n");
             }
         }
 
-        public void actualizarCliente()
-        {
+        public void actualizarCliente(int idClienteToSearch)
+        {   
+            if( clientes.Count > 0)
+            {
+                for (int i = 0; i < clientes.Count; i++)
+                {
+                    var element = clientes[i];
+                    if (element.Id == idClienteToSearch)
+                    {
+                        Console.WriteLine("Se encontro el cliente!");
+
+                        Console.WriteLine("Ingrese el nuevo nombre: ");
+                        var nuevoNombre = Console.ReadLine();
+
+                        Console.WriteLine("Ingrese el nuevo email");
+                        var nuevoEmail = Console.ReadLine();
+
+                        cliente.Name = nuevoNombre;
+                        cliente.Email = nuevoEmail;
+
+                        Console.WriteLine("\n*** El cliente se actualizo! ***\n");
+
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("\n*** No hay clientes en la lista! ***\n");
+            }
 
         }
 
-        public void eliminarCliente()
+        public void eliminarCliente(int idClienteToDelete)
         {
+            if( clientes.Count > 0)
+            {
+                for(int i = 0;i < clientes.Count; i++)
+                {
+                    var element = clientes[i];
+                    if( element.Id == idClienteToDelete)
+                    {
+                        clientes.Remove(element);
 
+                        Console.WriteLine("\n***Cliente eliminado Exitosamente!***\n");
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("\n*** No se encontro el Id! ***\n");
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("\n*** No hay clientes en la lista! ***\n");
+            }
         }
     }
 }

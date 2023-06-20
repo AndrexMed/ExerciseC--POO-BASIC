@@ -26,12 +26,22 @@ namespace HelloWorld
 
         public void actualizarCliente()
         {
-            clienteDAO.actualizarCliente();
+            Console.WriteLine("\n==== Actualizar Cliente ====\n");
+
+            Console.WriteLine("Ingrese el id del Cliente a actualizar...");
+            var idClienteToSearch = int.Parse(Console.ReadLine());
+
+            clienteDAO.actualizarCliente(idClienteToSearch);
         }
 
         public void eliminarCliente()
         {
-            clienteDAO.eliminarCliente();
+            Console.WriteLine("\n==== Eliminar Cliente ====\n");
+
+            Console.WriteLine("Ingrese el id del Cliente a eliminar...");
+            var idClienteToDelete = int.Parse(Console.ReadLine());
+
+            clienteDAO.eliminarCliente(idClienteToDelete);
         }
 
     }

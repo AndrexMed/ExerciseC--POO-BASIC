@@ -42,5 +42,30 @@ namespace HelloWorld.dao
                 Console.WriteLine("\n*** No se encontraron pedidos!! ***\n");
             }
         }
+
+        public void eliminarPedido(int idPedidoToSearch)
+        {
+            if (pedidos.Count > 0)
+            {
+                for (int i = 0; i < pedidos.Count ; i++)
+                {
+                    var item = pedidos[i];
+                    if (item.idPedido == idPedidoToSearch)
+                    {
+                        pedidos.Remove(item);
+
+                        Console.WriteLine("\n *** Pedido eliminado correctamente! ***\n");
+                    }
+                    else
+                    {
+                        Console.WriteLine("\n*** No se encontro el ID !! *** \n");
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("\n*** No hay items en la lista! ***\n");
+            }
+        }
     }
 }

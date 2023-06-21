@@ -51,16 +51,16 @@ while (flag)
             clienteController.actualizarCliente();
             break;
         case 5:
-
+            productoController.actualizarProducto();
             break;
         case 6:
             clienteController.eliminarCliente();
             break;
         case 7:
-
+            productoController.eliminarProducto();
             break;
         case 8:
-
+            pedidoController.eliminarPedido();
             break;
         case 9:
             flag = false;

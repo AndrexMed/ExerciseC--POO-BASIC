@@ -6,7 +6,7 @@ namespace HelloWorld.controller
     {
 
         private ProductoDAO productoDAO = new();
-  
+
         public void agregarProducto()
         {
             Console.WriteLine("\n==== Crear Producto ====\n");
@@ -26,6 +26,26 @@ namespace HelloWorld.controller
         public void listarProductos()
         {
             productoDAO.listarProductos();
+        }
+
+        public void actualizarProducto()
+        {
+            Console.WriteLine("\n==== Actualizar Producto ====\n");
+
+            Console.WriteLine("Ingrese el Id del producto a actualizar");
+            var id = int.Parse(Console.ReadLine());
+
+            productoDAO.actualizarProducto(id);
+        }
+
+        public void eliminarProducto()
+        {
+            Console.WriteLine("\n==== Eliminar Producto ====\n");
+
+            Console.WriteLine("Ingrese el Id del producto a eliminar");
+            var id = int.Parse(Console.ReadLine());
+
+            productoDAO.eliminarProducto(id);
         }
     }
 }

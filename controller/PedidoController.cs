@@ -29,6 +29,16 @@ namespace HelloWorld.controller
         {
             pedidoDAO.listarPedidos();
         }
+
+        public void eliminarPedido()
+        {
+            Console.WriteLine("\n==== Eliminar Pedido ====\n");
+
+            Console.WriteLine("Ingrese el Id del pedido");
+            var idPedidoToSearch = int.Parse(Console.ReadLine());
+
+            pedidoDAO.eliminarPedido(idPedidoToSearch);
+        }
     }
 
 }
